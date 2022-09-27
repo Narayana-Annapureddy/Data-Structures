@@ -1,5 +1,5 @@
-:root {
-    --color-primary: #0073ff;
+ :root {
+    --color-primary:aqua;
     --color-white: #e9e9e9;
     --color-black: #141d28;
     --color-black-1: #212b38;
@@ -13,12 +13,14 @@
   
   body {
     font-family: sans-serif;
-  
+    margin-top: 60px;
   }
   
   .logo {
     color: var(--color-white);
-    font-size: 30px;
+    font-size: 25px;
+    flex-shrink: 0;
+    margin-left: 10px;
   }
   
   .logo span {
@@ -29,12 +31,12 @@
     background-color: var(--color-black);
     height: 60px;
     width: 100%;
+    position:fixed;
+    left: 0;
+    top: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 5%;
-  
-    position: relative;
   }
   
   .menu-bar ul {
@@ -51,10 +53,9 @@
   }
   
   .menu-bar ul li a {
-    font-size: 20px;
+    font-size: 17px;
     color: var(--color-white);
     text-decoration: none;
-  
     transition: all 0.3s;
   }
   
@@ -103,4 +104,97 @@
     top: 0;
     background-color: var(--color-black);
   }
- 
+  .ham
+  {
+    display: none;
+    cursor: pointer;
+  }
+  #mobile-heads
+  {
+    display: none;
+  }
+  .feedback
+  {
+    text-decoration: none;
+    color: green;
+    margin-left: 20%;
+    margin-top: 30px;
+    cursor: pointer;
+    width: fit-content;
+  }
+  .feedback:hover
+  {
+    text-decoration: underline;
+  }
+  @media (max-width: 900px) {
+    .logo
+    {
+      font-size: 25px;
+    }
+    .heads
+    {
+      display: none;
+    }
+    .ham
+    {
+      display: inline;
+      margin-right: 15px;
+    }
+    .bar {
+      display: block;
+      width: 30px;
+      height: 5px;
+      background-color: white;
+      margin-top: 6px;
+    }
+    #mobile-heads
+    {
+      display: block;
+      position: fixed;
+      background-color: var(--color-black);
+      height: 100%;
+      width: 35%;
+      right: -35%;
+      top: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    #mobile-heads.active
+    {
+      right: 0;
+      transition: 0.5s;
+    }
+    #mobile-heads.inactive
+    {
+      right: -35%;
+      transition: 0.5s;
+    }
+    .menu
+    {
+      margin-top: 25px;
+      list-style: none;
+      display: block;
+    }
+    .dropdown-menu
+    {
+      display: block;
+    }
+    .dropdown-menu ul
+    {
+      list-style: none;
+    }
+    .dropdown-menu ul li
+    {
+      margin: 20px;
+    }
+    .dropdown-menu ul li a
+    {
+      color: white;
+    }
+    .menu-head
+    {
+      margin-left: 10px;
+      color: yellow;
+      text-decoration: none;
+    }
+  }
