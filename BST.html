@@ -10,7 +10,7 @@
 </head>
 <body style="background-color: powderblue;">
     <br><h1 align="center">Binary Search Tree</h1><br>
-    <br><p id="Tree_disp" class="fs-4" style=" color: #1111d8;">Initially Binary Search tree is empty....</p><br><br>
+    <br><p id="Tree_disp" class="fs-4" style="margin-left: 10%; color: #1111d8;">Initially Binary Search tree is empty....</p><br><br>
     <div class="container">
             <div class="row">
                 <div class="col-sm-1"></div>
@@ -64,21 +64,21 @@
                         break;
                 
                 for(i=1; i<Math.pow(2,val-1); i++)
-                    document.getElementById("Tree_disp").innerHTML += '&emsp;';
+                    document.getElementById("Tree_disp").innerHTML += '&emsp;&nbsp;';
                 
                 for(i=0; i<q1.length; i++) {
                     if (q1[i] != null) {
-                        document.getElementById("Tree_disp").innerHTML += `${q1[i].data}`;
+                        document.getElementById("Tree_disp").innerHTML += `&nbsp;${q1[i].data}`;
                         q2.push(q1[i].left);
                         q2.push(q1[i].right);
                     }
                     else {
-                        document.getElementById("Tree_disp").innerHTML += `&nbsp;N`;
+                        document.getElementById("Tree_disp").innerHTML += `&nbsp;&nbsp;N`;
                         q2.push(null);
                         q2.push(null);
                     }
                     for(j=1; j<Math.pow(2,val); j++)
-                        document.getElementById("Tree_disp").innerHTML += '&emsp;';
+                        document.getElementById("Tree_disp").innerHTML += '&emsp;&nbsp;';
                 }
                 val -= 1;
                 q1 = []
