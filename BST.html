@@ -64,21 +64,21 @@
                         break;
                 
                 for(i=1; i<Math.pow(2,val-1); i++)
-                    document.getElementById("Tree_disp").innerHTML += '&emsp;&nbsp;';
+                    document.getElementById("Tree_disp").innerHTML += '&emsp;';
                 
                 for(i=0; i<q1.length; i++) {
                     if (q1[i] != null) {
-                        document.getElementById("Tree_disp").innerHTML += `&nbsp;${q1[i].data}`;
+                        document.getElementById("Tree_disp").innerHTML += `${q1[i].data}`;
                         q2.push(q1[i].left);
                         q2.push(q1[i].right);
                     }
                     else {
-                        document.getElementById("Tree_disp").innerHTML += `&nbsp;&nbsp;N`;
+                        document.getElementById("Tree_disp").innerHTML += `&nbsp;N`;
                         q2.push(null);
                         q2.push(null);
                     }
                     for(j=1; j<Math.pow(2,val); j++)
-                        document.getElementById("Tree_disp").innerHTML += '&emsp;&nbsp;';
+                        document.getElementById("Tree_disp").innerHTML += '&emsp;';
                 }
                 val -= 1;
                 q1 = []
