@@ -34,7 +34,7 @@
         class BST {
             constructor() {
                 this.root = null;
-                this.size = 0;
+                this.length = 0;
             }
 
             len() {
@@ -89,39 +89,51 @@
             }
 
             add(val) {
+                    
                 var node = new Node(val);
                 if (this.root == null) {
                     this.root = node;
+                    document.getElementById("print1").innerHTML = `Element ${inp} inserted successfully`;        
                 }
                 else {
-                    function fun(temp) {
+                    function fun(temp,length) {
+                        console.log(length);
+                        if (length > 3) {
+                            document.getElementById("print1").innerHTML = "Height greater than 3 not supported.........";
+                            return;
+                        }
                         if (val < temp.data) {
-                            if (temp.left == null) 
+                            if (temp.left == null) {
                                 temp.left = node;
+                                document.getElementById("print1").innerHTML = `Element ${inp} inserted successfully`;        
+                            }
                             else 
-                                fun(temp.left);
+                                fun(temp.left, length+1);
                         }
                         else {
-                            if (temp.right == null)
+                            if (temp.right == null) {
                                 temp.right = node;
+                                document.getElementById("print1").innerHTML = `Element ${inp} inserted successfully`;        
+                            }
                             else
-                                fun(temp.right);
+                                fun(temp.right, length+1);
                         }
+                        length += 1;
                     }
-                    fun(this.root);                
+                    fun(this.root,1);  
+                               
                 }
-                this.size += 1;
             }
+
         }
 
         var n = new BST();
         function fun1() {
             inp = Number(document.getElementById("input").value);
-            n.add(inp);
-            n.displa();
             document.getElementById("input").value = "";
             document.getElementById("print1").style.display = "block";
-            document.getElementById("print1").innerHTML = `Element ${inp} inserted successfully`;
+            n.add(inp)           
+            n.displa();
         }
     </script>
 </body>
